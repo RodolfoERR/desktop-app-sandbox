@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "controlAlmacen": {
+      "commandName": "Project",
+      "nativeDebugging": true
+    }
+  }
+}

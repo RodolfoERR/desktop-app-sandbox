@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "9n/Qn6Xv0RenRxKWi4P0IthKQ/GKZE6WZOzMFD4sBhMCmYIZj8FWH/ApqioypwAJZt+auv2y73vYezjYXN/mIw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\controlAlmacen.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\SandovalS\\.nuget\\packages\\microsoft.extensions.primitives\\8.0.0\\microsoft.extensions.primitives.8.0.0.nupkg.sha512",
+    "C:\\Users\\SandovalS\\.nuget\\packages\\microsoft.net.http.headers\\8.0.7\\microsoft.net.http.headers.8.0.7.nupkg.sha512",
+    "C:\\Users\\SandovalS\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.1\\microsoft.netcore.platforms.1.1.1.nupkg.sha512",
+    "C:\\Users\\SandovalS\\.nuget\\packages\\microsoft.netcore.targets\\1.1.3\\microsoft.netcore.targets.1.1.3.nupkg.sha512",
+    "C:\\Users\\SandovalS\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\SandovalS\\.nuget\\packages\\runtime.native.system.net.http\\4.3.1\\runtime.native.system.net.http.4.3.1.nupkg.sha512"
+  ],
+  "logs": []
+}

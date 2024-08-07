@@ -1,0 +1,199 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|c:\\users\\sandovals\\desktop\\desktopapp\\controlalmacen\\controlalmacen\\properties\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|solutionrelative:controlalmacen\\properties\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlalmacen\\properties\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|solutionrelative:controlalmacen\\properties\\main.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlalmacen\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|solutionrelative:controlalmacen\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlalmacen\\refaccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|solutionrelative:controlalmacen\\refaccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlalmacen\\refaccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|solutionrelative:controlalmacen\\refaccion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlalmacen\\refaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|solutionrelative:controlalmacen\\refaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlalmacen\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|solutionrelative:controlalmacen\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlalmacen\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|solutionrelative:controlalmacen\\location.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlalmacen\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|solutionrelative:controlalmacen\\login.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlalmacen\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|solutionrelative:controlalmacen\\login.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlalmacen\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{208AA9EE-78C7-4E8E-B0FE-ADB64EC372D9}|controlAlmacen\\controlAlmacen.csproj|solutionrelative:controlalmacen\\session.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "login.cs",
+              "DocumentMoniker": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\login.cs",
+              "RelativeDocumentMoniker": "controlAlmacen\\login.cs",
+              "ToolTip": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\login.cs",
+              "RelativeToolTip": "controlAlmacen\\login.cs",
+              "ViewState": "AQIAAHcAAAAAAAAAAAAcwIoAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-28T02:27:07.583Z",
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "refaccion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\refaccion.cs",
+              "RelativeDocumentMoniker": "controlAlmacen\\refaccion.cs",
+              "ToolTip": "C:\\Users\\jhong\\OneDrive\\Escritorio\\desktopAppControlalmacen\\controlAlmacen\\controlAlmacen\\refaccion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\jhong\\OneDrive\\Escritorio\\desktopAppControlalmacen\\controlAlmacen\\controlAlmacen\\refaccion.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T05:26:56.172Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "refaccion.cs",
+              "DocumentMoniker": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\refaccion.cs",
+              "RelativeDocumentMoniker": "controlAlmacen\\refaccion.cs",
+              "ToolTip": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\refaccion.cs",
+              "RelativeToolTip": "controlAlmacen\\refaccion.cs",
+              "ViewState": "AQIAADsAAAAAAAAAAAAYwDEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T05:33:39.691Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.cs",
+              "DocumentMoniker": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\Properties\\main.cs",
+              "RelativeDocumentMoniker": "controlAlmacen\\Properties\\main.cs",
+              "ToolTip": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\Properties\\main.cs",
+              "RelativeToolTip": "controlAlmacen\\Properties\\main.cs",
+              "ViewState": "AQIAAGgAAACAmZmZmZkiwFgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-28T04:48:05.602Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\Program.cs",
+              "RelativeDocumentMoniker": "controlAlmacen\\Program.cs",
+              "ToolTip": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\Program.cs",
+              "RelativeToolTip": "controlAlmacen\\Program.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAIwBMAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T03:52:57.491Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "main.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\Properties\\main.cs",
+              "RelativeDocumentMoniker": "controlAlmacen\\Properties\\main.cs",
+              "ToolTip": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\Properties\\main.cs [Dise\u00F1o]",
+              "RelativeToolTip": "controlAlmacen\\Properties\\main.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-28T04:48:02.143Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Refaction.cs",
+              "DocumentMoniker": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\Refaction.cs",
+              "RelativeDocumentMoniker": "controlAlmacen\\Refaction.cs",
+              "ToolTip": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\Refaction.cs",
+              "RelativeToolTip": "controlAlmacen\\Refaction.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAmwAwAAAATAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-29T02:55:42.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Location.cs",
+              "DocumentMoniker": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\Location.cs",
+              "RelativeDocumentMoniker": "controlAlmacen\\Location.cs",
+              "ToolTip": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\Location.cs",
+              "RelativeToolTip": "controlAlmacen\\Location.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-31T07:37:48.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "login.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\login.Designer.cs",
+              "RelativeDocumentMoniker": "controlAlmacen\\login.Designer.cs",
+              "ToolTip": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\login.Designer.cs",
+              "RelativeToolTip": "controlAlmacen\\login.Designer.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKUAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T03:26:48.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Session.cs",
+              "DocumentMoniker": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\Session.cs",
+              "RelativeDocumentMoniker": "controlAlmacen\\Session.cs",
+              "ToolTip": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\Session.cs",
+              "RelativeToolTip": "controlAlmacen\\Session.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-28T04:43:32.322Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "login.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\login.cs",
+              "RelativeDocumentMoniker": "controlAlmacen\\login.cs",
+              "ToolTip": "C:\\Users\\jhong\\OneDrive\\Escritorio\\desktopAppControlalmacen\\controlAlmacen\\controlAlmacen\\login.cs [Dise\u00F1o]",
+              "RelativeToolTip": "..\\..\\..\\..\\jhong\\OneDrive\\Escritorio\\desktopAppControlalmacen\\controlAlmacen\\controlAlmacen\\login.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-24T03:32:07.366Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
