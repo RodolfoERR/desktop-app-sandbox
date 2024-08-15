@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
-using controlAlmacen.Properties;
 using System.Diagnostics;
+using controlAlmacen.Properties;
 
 namespace controlAlmacen
 {
@@ -34,8 +34,7 @@ namespace controlAlmacen
             label12.Text = _refaction.Name;
             label14.Text = _refaction.Total_quantity.ToString();
             label13.Text = _refaction.LocationName;
-            string baseUrl = "http://127.0.0.1:8000/images/";
-            string imageUrl = baseUrl + _refaction.Image;
+            string imageUrl = _refaction.Image;
             if (!string.IsNullOrEmpty(_refaction.Image))
             {
                 try
@@ -98,7 +97,20 @@ namespace controlAlmacen
                 return;
             }
 
-            var url = $"http://127.0.0.1:8000/api/v1/refactions/taking/{_refaction.Id}";
+            // Verificación de huella antes de continuar
+            using (var compararHuellaForm = new compararHuella())
+            {
+                compararHuellaForm.ShowDialog();
+
+                if (!compararHuellaForm.VerificationSuccessful)
+                {
+                    MessageBox.Show("Verificación de huella fallida. No se puede completar la extracción.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            // Si llegamos aquí, la verificación fue exitosa
+            var url = $"https://quintaesencia.website/api/v1/refactions/taking/{_refaction.Id}";
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Session.Accesstoken);
 
             var contenido = new StringContent(
@@ -115,7 +127,6 @@ namespace controlAlmacen
                 {
                     MessageBox.Show("Operación exitosa", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     await ReloadRefactionDetails();
-
                 }
                 else
                 {
@@ -129,19 +140,9 @@ namespace controlAlmacen
         }
 
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void textBox1_TextChanged_1(object sender, EventArgs e)
-        {
-        }
-
-
-
         private async Task ReloadRefactionDetails()
         {
-            var url = $"http://127.0.0.1:8000/api/v1/refactions/by/{_refaction.Id}";
+            var url = $"https://quintaesencia.website/api/v1/refactions/by/{_refaction.Id}";
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Session.Accesstoken);
 
             try
@@ -160,7 +161,6 @@ namespace controlAlmacen
                     {
                         var updatedRefaction = refactionSingleResponse.Data;
 
-                       
                         _refaction.Total_quantity = updatedRefaction.Total_quantity;
 
                         DisplayRefactionDetails();
@@ -181,6 +181,13 @@ namespace controlAlmacen
             }
         }
 
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+        }
 
         private void label13_Click(object sender, EventArgs e)
         {
@@ -193,11 +200,37 @@ namespace controlAlmacen
         private void label3_Click_1(object sender, EventArgs e)
         {
             this.Close();
-            
         }
 
         private void txtBuscarRefaccion_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void LabelIDX_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void texboxCantidad_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

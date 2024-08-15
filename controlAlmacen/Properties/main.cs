@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using DPFP;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,8 +23,8 @@ namespace controlAlmacen.Properties
         private List<Refaction> allRefactions = new List<Refaction>();
         private bool isInitialized = false;
         private refaccion detailsForm;
-        
-       
+
+
 
         public main()
         {
@@ -65,8 +66,8 @@ namespace controlAlmacen.Properties
         {
             using (HttpClient client = new HttpClient())
             {
-                var refactionUrl = "http://127.0.0.1:8000/api/v1/refactions/all-minus";
-                var locationUrl = "http://127.0.0.1:8000/api/v1/refactions/all-locations";
+                var refactionUrl = "https://quintaesencia.website/api/v1/refactions/all-minus";
+                var locationUrl = "https://quintaesencia.website/api/v1/refactions/all-locations";
 
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Session.Accesstoken);
 
@@ -113,7 +114,7 @@ namespace controlAlmacen.Properties
         {
             using (var client = new HttpClient())
             {
-                var url = "http://127.0.0.1:8000/api/v1/users/log-out";
+                var url = "https://quintaesencia.website/api/v1/users/log-out";
 
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Session.Accesstoken);
 
@@ -198,5 +199,75 @@ namespace controlAlmacen.Properties
         private void pictureBox2_Click(object sender, EventArgs e)
         {
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using(capturarHuella capturarFp =  new capturarHuella())
+            {
+                capturarFp.OnTemplate += this.OnTemplate;
+                capturarFp.ShowDialog();
+            }
+        }
+        private Template Template = null;
+
+        private async void OnTemplate(Template template)
+        {
+            this.Invoke(new Action(async () =>
+            {
+                Template = template;
+
+                if (template != null)
+                {
+                    MessageBox.Show("Fingerprint was correct and set to go");
+
+                    byte[] fingerprint = Template.Bytes;
+
+                    // Convertir la huella a Base64
+                    string base64String = Convert.ToBase64String(fingerprint);
+
+                    // Crear un objeto JSON con la variable base64String
+                    var jsonData = new
+                    {
+                        fp = base64String
+                    };
+
+                    // Convertir el objeto a una cadena JSON
+                    string jsonString = Newtonsoft.Json.JsonConvert.SerializeObject(jsonData);
+
+                    // Crear el contenido para la solicitud POST
+                    var content = new StringContent(jsonString, Encoding.UTF8, "application/json");
+
+                    // Realizar la solicitud POST
+                    using (HttpClient client = new HttpClient())
+                    {
+                        try
+                        {
+                            // Asegúrate de que la URL esté correcta y accesible
+                            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Session.Accesstoken);
+                            HttpResponseMessage response = await client.PostAsync("https://quintaesencia.website/api/v1/fp/save-digital-fp", content);
+
+                            if (response.IsSuccessStatusCode)
+                            {
+                                MessageBox.Show("Fingerprint was successfully sent to the server.");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Failed to send fingerprint: " + response.ReasonPhrase);
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("An error occurred: " + ex.Message);
+                        }
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Fingerprint was not correctly captured");
+                }
+            }));
+        }
+
+
     }
 }

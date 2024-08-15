@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("controlAlmacen")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+85b7ee2f485b7faa77222772dbb67ef239b10b20")]
 [assembly: System.Reflection.AssemblyProductAttribute("controlAlmacen")]
 [assembly: System.Reflection.AssemblyTitleAttribute("controlAlmacen")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

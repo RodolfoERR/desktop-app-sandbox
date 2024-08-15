@@ -209,19 +209,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\SandovalS\\.nuget\\packages\\": {}
+    "C:\\Users\\jhong\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\controlAlmacen.csproj",
+      "projectUniqueName": "C:\\Users\\jhong\\OneDrive\\Escritorio\\desktopAppControlalmacen\\controlAlmacen\\controlAlmacen\\controlAlmacen.csproj",
       "projectName": "controlAlmacen",
-      "projectPath": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\controlAlmacen.csproj",
-      "packagesPath": "C:\\Users\\SandovalS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\SandovalS\\Desktop\\desktopApp\\controlAlmacen\\controlAlmacen\\obj\\",
+      "projectPath": "C:\\Users\\jhong\\OneDrive\\Escritorio\\desktopAppControlalmacen\\controlAlmacen\\controlAlmacen\\controlAlmacen.csproj",
+      "packagesPath": "C:\\Users\\jhong\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\jhong\\OneDrive\\Escritorio\\desktopAppControlalmacen\\controlAlmacen\\controlAlmacen\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\SandovalS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\jhong\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

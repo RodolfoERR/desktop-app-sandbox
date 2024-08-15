@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             panel1 = new Panel();
+            button1 = new Button();
             label8 = new Label();
             label7 = new Label();
             label6 = new Label();
@@ -46,6 +47,7 @@
             label9 = new Label();
             bindingSource1 = new BindingSource(components);
             huella = new PictureBox();
+            label10 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -56,6 +58,7 @@
             // panel1
             // 
             panel1.BackColor = SystemColors.Highlight;
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(label8);
             panel1.Controls.Add(label7);
             panel1.Controls.Add(label6);
@@ -69,6 +72,17 @@
             panel1.TabIndex = 0;
             panel1.Paint += panel1_Paint;
             // 
+            // button1
+            // 
+            button1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(28, 291);
+            button1.Name = "button1";
+            button1.Size = new Size(129, 52);
+            button1.TabIndex = 8;
+            button1.Text = "Generar Huella Dactilar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // label8
             // 
             label8.AutoSize = true;
@@ -77,9 +91,8 @@
             label8.ForeColor = SystemColors.Control;
             label8.Location = new Point(28, 335);
             label8.Name = "label8";
-            label8.Size = new Size(101, 20);
+            label8.Size = new Size(0, 20);
             label8.TabIndex = 7;
-            label8.Text = "Subministros";
             // 
             // label7
             // 
@@ -89,9 +102,8 @@
             label7.ForeColor = SystemColors.Control;
             label7.Location = new Point(50, 291);
             label7.Name = "label7";
-            label7.Size = new Size(61, 20);
+            label7.Size = new Size(0, 20);
             label7.TabIndex = 6;
-            label7.Text = "Electrica";
             // 
             // label6
             // 
@@ -101,9 +113,8 @@
             label6.ForeColor = SystemColors.Control;
             label6.Location = new Point(50, 248);
             label6.Name = "label6";
-            label6.Size = new Size(76, 20);
+            label6.Size = new Size(0, 20);
             label6.TabIndex = 5;
-            label6.Text = "Neumatica";
             label6.Click += label6_Click;
             // 
             // label5
@@ -114,9 +125,8 @@
             label5.ForeColor = SystemColors.Control;
             label5.Location = new Point(50, 208);
             label5.Name = "label5";
-            label5.Size = new Size(68, 20);
+            label5.Size = new Size(0, 20);
             label5.TabIndex = 4;
-            label5.Text = "Mecanica";
             label5.Click += label5_Click;
             // 
             // label4
@@ -127,9 +137,8 @@
             label4.ForeColor = SystemColors.Control;
             label4.Location = new Point(28, 174);
             label4.Name = "label4";
-            label4.Size = new Size(92, 20);
+            label4.Size = new Size(0, 20);
             label4.TabIndex = 3;
-            label4.Text = "Refacciones";
             label4.Click += label4_Click;
             // 
             // label3
@@ -141,7 +150,7 @@
             label3.ForeColor = SystemColors.Control;
             label3.Location = new Point(28, 583);
             label3.Name = "label3";
-            label3.Size = new Size(125, 22);
+            label3.Size = new Size(129, 22);
             label3.TabIndex = 2;
             label3.Text = "Cerrar Sesion ​👤​";
             label3.Click += label3_Click;
@@ -149,9 +158,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(21, 3);
+            pictureBox1.Location = new Point(9, 11);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(136, 98);
+            pictureBox1.Size = new Size(164, 98);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -185,7 +194,7 @@
             labelName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             labelName.Location = new Point(796, 14);
             labelName.Name = "labelName";
-            labelName.Size = new Size(47, 15);
+            labelName.Size = new Size(49, 15);
             labelName.TabIndex = 1;
             labelName.Text = "User ​👤​";
             labelName.Click += label1_Click;
@@ -213,7 +222,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 14F);
-            label9.Location = new Point(314, 525);
+            label9.Location = new Point(285, 525);
             label9.Name = "label9";
             label9.Size = new Size(683, 25);
             label9.TabIndex = 4;
@@ -232,11 +241,22 @@
             huella.TabStop = false;
             huella.Click += pictureBox2_Click;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label10.Location = new Point(243, 561);
+            label10.Name = "label10";
+            label10.Size = new Size(784, 25);
+            label10.TabIndex = 6;
+            label10.Text = "Recuerda Generar tu HUELLA DACTILAR antes de proceder con el retiro de refacciones.";
+            // 
             // main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1083, 630);
+            Controls.Add(label10);
             Controls.Add(huella);
             Controls.Add(label9);
             Controls.Add(label1);
@@ -275,5 +295,7 @@
         private Label label9;
         private BindingSource bindingSource1;
         private PictureBox huella;
+        private Button button1;
+        private Label label10;
     }
 }

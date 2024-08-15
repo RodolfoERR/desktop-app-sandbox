@@ -10,7 +10,15 @@
         "dependencies": {
           "Microsoft.Net.Http.Headers": "8.0.7",
           "Newtonsoft.Json": "13.0.3",
-          "runtime.native.System.Net.Http": "4.3.1"
+          "runtime.native.System.Net.Http": "4.3.1",
+          "DPFPCtlXTypeLibNET": "1.6.1.0",
+          "DPFPCtlXWrapperNET": "1.6.1.0",
+          "DPFPDevNET": "1.6.1.0",
+          "DPFPEngNET": "1.6.1.0",
+          "DPFPGuiNET": "1.6.1.0",
+          "DPFPShrNET": "1.6.1.0",
+          "DPFPShrXTypeLibNET": "1.6.1.0",
+          "DPFPVerNET": "1.6.1.0"
         },
         "runtime": {
           "controlAlmacen.dll": {}
@@ -49,6 +57,70 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "1.1.1",
           "Microsoft.NETCore.Targets": "1.1.3"
+        }
+      },
+      "DPFPCtlXTypeLibNET/1.6.1.0": {
+        "runtime": {
+          "DPFPCtlXTypeLibNET.dll": {
+            "assemblyVersion": "1.6.1.0",
+            "fileVersion": "1.6.1.0"
+          }
+        }
+      },
+      "DPFPCtlXWrapperNET/1.6.1.0": {
+        "runtime": {
+          "DPFPCtlXWrapperNET.dll": {
+            "assemblyVersion": "1.6.1.0",
+            "fileVersion": "1.6.1.0"
+          }
+        }
+      },
+      "DPFPDevNET/1.6.1.0": {
+        "runtime": {
+          "DPFPDevNET.dll": {
+            "assemblyVersion": "1.6.1.0",
+            "fileVersion": "1.6.1.0"
+          }
+        }
+      },
+      "DPFPEngNET/1.6.1.0": {
+        "runtime": {
+          "DPFPEngNET.dll": {
+            "assemblyVersion": "1.6.1.0",
+            "fileVersion": "1.6.1.0"
+          }
+        }
+      },
+      "DPFPGuiNET/1.6.1.0": {
+        "runtime": {
+          "DPFPGuiNET.dll": {
+            "assemblyVersion": "1.6.1.0",
+            "fileVersion": "1.6.1.0"
+          }
+        }
+      },
+      "DPFPShrNET/1.6.1.0": {
+        "runtime": {
+          "DPFPShrNET.dll": {
+            "assemblyVersion": "1.6.1.0",
+            "fileVersion": "1.6.1.0"
+          }
+        }
+      },
+      "DPFPShrXTypeLibNET/1.6.1.0": {
+        "runtime": {
+          "DPFPShrXTypeLibNET.dll": {
+            "assemblyVersion": "1.6.1.0",
+            "fileVersion": "1.6.1.0"
+          }
+        }
+      },
+      "DPFPVerNET/1.6.1.0": {
+        "runtime": {
+          "DPFPVerNET.dll": {
+            "assemblyVersion": "1.6.1.0",
+            "fileVersion": "1.6.1.0"
+          }
         }
       }
     }
@@ -100,6 +172,46 @@
       "sha512": "sha512-aq6gVrN0ZHgXN71a2IncLS0hxc4bt3/n37gJF/sBuPr5BKG3Q3Fv0M9GzMv/GK2aF+tVxgVAY/LyZgyF4qma3g==",
       "path": "runtime.native.system.net.http/4.3.1",
       "hashPath": "runtime.native.system.net.http.4.3.1.nupkg.sha512"
+    },
+    "DPFPCtlXTypeLibNET/1.6.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DPFPCtlXWrapperNET/1.6.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DPFPDevNET/1.6.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DPFPEngNET/1.6.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DPFPGuiNET/1.6.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DPFPShrNET/1.6.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DPFPShrXTypeLibNET/1.6.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DPFPVerNET/1.6.1.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }

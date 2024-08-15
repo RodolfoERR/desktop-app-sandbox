@@ -39,7 +39,7 @@ namespace controlAlmacen
             try
             {
                 // Simulación de un retraso en la inicialización
-                await Task.Delay(5000);
+                await Task.Delay(1000);
             }
             catch (Exception ex)
             {
@@ -81,12 +81,16 @@ namespace controlAlmacen
         private async void button1_Click(object sender, EventArgs e)
         {
             Log("button1_Click triggered");
+
+            botonLogin.Enabled = false; 
+
             var emaila = textBox1.Text;
             var passworda = textBox2.Text;
 
             if (string.IsNullOrWhiteSpace(emaila) || string.IsNullOrWhiteSpace(passworda))
             {
                 MessageBox.Show("Por favor, complete ambos campos.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                botonLogin.Enabled = true; 
                 return;
             }
 
@@ -101,7 +105,7 @@ namespace controlAlmacen
 
             try
             {
-                var response = await client.PostAsync("http://127.0.0.1:8000/api/v1/users/log-in/", content);
+                var response = await client.PostAsync("https://quintaesencia.website/api/v1/users/log-in/", content);
 
                 var responseString = await response.Content.ReadAsStringAsync();
 
@@ -124,6 +128,10 @@ namespace controlAlmacen
                 Log($"Error in button1_Click: {ex.Message}\n{ex.StackTrace}");
                 MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                botonLogin.Enabled = true; 
+            }
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -137,4 +145,4 @@ namespace controlAlmacen
             Console.WriteLine(message);
         }
     }
-}
+}       

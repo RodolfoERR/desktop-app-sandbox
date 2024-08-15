@@ -93,6 +93,7 @@
             // botonLogin
             // 
             botonLogin.BackColor = SystemColors.Highlight;
+            botonLogin.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             botonLogin.ForeColor = SystemColors.ControlLight;
             botonLogin.Location = new Point(76, 206);
             botonLogin.Name = "botonLogin";
@@ -105,9 +106,10 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(49, 129);
             label2.Name = "label2";
-            label2.Size = new Size(67, 15);
+            label2.Size = new Size(69, 15);
             label2.TabIndex = 4;
             label2.Text = "Contraseña";
             label2.Click += label2_Click;
@@ -115,9 +117,10 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(49, 63);
             label1.Name = "label1";
-            label1.Size = new Size(47, 15);
+            label1.Size = new Size(49, 15);
             label1.TabIndex = 3;
             label1.Text = "Usuario";
             // 
