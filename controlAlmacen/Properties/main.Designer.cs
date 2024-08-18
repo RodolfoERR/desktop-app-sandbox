@@ -40,8 +40,9 @@
             label3 = new Label();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
+            labelUser = new Label();
+            label11 = new Label();
             comboBoxRefactions = new ComboBox();
-            labelName = new Label();
             label2 = new Label();
             label1 = new Label();
             label9 = new Label();
@@ -168,36 +169,48 @@
             // panel2
             // 
             panel2.BackColor = Color.Gray;
+            panel2.Controls.Add(labelUser);
+            panel2.Controls.Add(label11);
             panel2.Controls.Add(comboBoxRefactions);
-            panel2.Controls.Add(labelName);
             panel2.Location = new Point(182, 1);
             panel2.Name = "panel2";
-            panel2.Size = new Size(901, 46);
+            panel2.Size = new Size(901, 53);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
+            // 
+            // labelUser
+            // 
+            labelUser.AutoSize = true;
+            labelUser.FlatStyle = FlatStyle.Popup;
+            labelUser.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelUser.ForeColor = SystemColors.Control;
+            labelUser.Location = new Point(722, 24);
+            labelUser.Name = "labelUser";
+            labelUser.Size = new Size(33, 15);
+            labelUser.TabIndex = 4;
+            labelUser.Text = "User";
+            labelUser.Click += labelUser_Click;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.ForeColor = SystemColors.Control;
+            label11.Location = new Point(286, 7);
+            label11.Name = "label11";
+            label11.Size = new Size(214, 15);
+            label11.TabIndex = 3;
+            label11.Text = "🔍​ Seleccionar Refaccion o Subministro";
             // 
             // comboBoxRefactions
             // 
             comboBoxRefactions.FormattingEnabled = true;
-            comboBoxRefactions.Location = new Point(20, 14);
+            comboBoxRefactions.Location = new Point(14, 24);
             comboBoxRefactions.Margin = new Padding(2);
             comboBoxRefactions.Name = "comboBoxRefactions";
-            comboBoxRefactions.Size = new Size(420, 23);
+            comboBoxRefactions.Size = new Size(672, 23);
             comboBoxRefactions.TabIndex = 2;
             comboBoxRefactions.Text = "🔍​ Seleccionar Refaccion o Subministro";
             comboBoxRefactions.SelectedIndexChanged += comboBoxRefactions_SelectedIndexChanged;
-            // 
-            // labelName
-            // 
-            labelName.AutoSize = true;
-            labelName.FlatStyle = FlatStyle.Popup;
-            labelName.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            labelName.Location = new Point(796, 14);
-            labelName.Name = "labelName";
-            labelName.Size = new Size(49, 15);
-            labelName.TabIndex = 1;
-            labelName.Text = "User ​👤​";
-            labelName.Click += label1_Click;
             // 
             // label2
             // 
@@ -282,7 +295,6 @@
         private Panel panel1;
         private Panel panel2;
         private PictureBox pictureBox1;
-        private Label labelName;
         private Label label3;
         private Label label2;
         private Label label5;
@@ -297,5 +309,7 @@
         private PictureBox huella;
         private Button button1;
         private Label label10;
+        private Label label11;
+        private Label labelUser;
     }
 }

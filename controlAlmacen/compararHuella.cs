@@ -3,6 +3,7 @@ using DPFP;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Net.Http;
 using System.Net.Http.Headers;
@@ -50,13 +51,14 @@ namespace controlAlmacen
 
                 var data = new Dictionary<string, string> { { "user_id", "some_value" } };
                 var content = new FormUrlEncodedContent(data);
-                HttpResponseMessage response = await client.PostAsync("https://quintaesencia.website/api/v1/fp/check-digital-fp", content);
+                HttpResponseMessage response = await client.PostAsync("http://127.0.0.1:8000/api/v1/fp/check-digital-fp", content);
 
                 if (response.IsSuccessStatusCode)
                 {
                     var jsonResponse = await response.Content.ReadAsStringAsync();
                     dynamic jsonResult = JsonConvert.DeserializeObject(jsonResponse);
                     base64Fingerprint = jsonResult.data;
+                    Debug.WriteLine(base64Fingerprint);
 
                     // Validación: Verificar si la huella dactilar está registrada
                     if (string.IsNullOrEmpty(base64Fingerprint))
@@ -68,14 +70,14 @@ namespace controlAlmacen
                 }
                 else
                 {
-                    MessageBox.Show("No se pudo recuperar la huella digital: " + response.ReasonPhrase);
+                    MessageBox.Show("Failed to retrieve fingerprint: " + response.ReasonPhrase);
                     this.DialogResult = DialogResult.Cancel; // Indica que la verificación falló
                     return;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Se produjo un error: " + ex.Message);
+                MessageBox.Show("An error occurred: " + ex.Message);
                 this.DialogResult = DialogResult.Cancel; // Indica que hubo un error
                 return;
             }
@@ -113,7 +115,7 @@ namespace controlAlmacen
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Se produjo un error durante el procesamiento de huellas dactilares: " + ex.Message);
+                MessageBox.Show("Se produjo un error durante el procesamiento de la huella digital: " + ex.Message);
                 this.DialogResult = DialogResult.Cancel; // Indica que la verificación falló
             }
         }

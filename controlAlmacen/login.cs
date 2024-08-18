@@ -12,6 +12,7 @@ namespace controlAlmacen
     {
         private static readonly HttpClient client = new HttpClient();
 
+
         public login()
         {
             try
@@ -46,6 +47,9 @@ namespace controlAlmacen
                 Log($"Error in login_Load: {ex.Message}\n{ex.StackTrace}");
                 MessageBox.Show($"Error in login_Load: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -82,7 +86,7 @@ namespace controlAlmacen
         {
             Log("button1_Click triggered");
 
-            botonLogin.Enabled = false; 
+            botonLogin.Enabled = false;
 
             var emaila = textBox1.Text;
             var passworda = textBox2.Text;
@@ -90,7 +94,7 @@ namespace controlAlmacen
             if (string.IsNullOrWhiteSpace(emaila) || string.IsNullOrWhiteSpace(passworda))
             {
                 MessageBox.Show("Por favor, complete ambos campos.", "Campos vacíos", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                botonLogin.Enabled = true; 
+                botonLogin.Enabled = true;
                 return;
             }
 
@@ -105,14 +109,19 @@ namespace controlAlmacen
 
             try
             {
-                var response = await client.PostAsync("https://quintaesencia.website/api/v1/users/log-in/", content);
+                var response = await client.PostAsync("http://127.0.0.1:8000/api/v1/users/log-in/", content);
 
                 var responseString = await response.Content.ReadAsStringAsync();
 
                 if (response.IsSuccessStatusCode)
                 {
                     var responseJson = JsonConvert.DeserializeObject<dynamic>(responseString);
-                    Session.Accesstoken = responseJson.token;
+                    string token = responseJson.token;
+                    int userId = responseJson.user.id;
+                    string userName = responseJson.user.name;
+
+                    Session.SaveSessionData(token, userId, userName);
+                    //Session.Accesstoken = responseJson.token;
                     MessageBox.Show("Login exitoso.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     main mainForm = new main();
                     mainForm.Show();
@@ -130,7 +139,7 @@ namespace controlAlmacen
             }
             finally
             {
-                botonLogin.Enabled = true; 
+                botonLogin.Enabled = true;
             }
         }
 
@@ -143,6 +152,21 @@ namespace controlAlmacen
         {
             // Aquí puedes implementar la lógica de registro, por ejemplo, escribir en un archivo de texto o consola
             Console.WriteLine(message);
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            using (consultarRefaccion consultarRefForm = new consultarRefaccion())
+            {
+                // Abre el formulario como un diálogo modal
+                consultarRefForm.ShowDialog();
+            }
+           
         }
     }
 }       

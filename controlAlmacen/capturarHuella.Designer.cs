@@ -28,20 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
+            label1 = new Label();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Location = new Point(355, 58);
+            label1.Name = "label1";
+            label1.Size = new Size(300, 17);
+            label1.TabIndex = 7;
+            label1.Text = "Ingrese su Huella Dactilar 4 Veces Consecutivas";
+            label1.Click += label1_Click;
             // 
             // capturarHuella
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(746, 455);
+            Controls.Add(label1);
             Name = "capturarHuella";
             Text = "capturarHuella";
             Load += capturarHuella_Load;
+            Controls.SetChildIndex(label1, 0);
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
     }
 }

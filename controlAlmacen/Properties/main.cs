@@ -13,7 +13,9 @@ using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.Json;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Diagnostics.Eventing.Reader;
 
 namespace controlAlmacen.Properties
 {
@@ -23,8 +25,7 @@ namespace controlAlmacen.Properties
         private List<Refaction> allRefactions = new List<Refaction>();
         private bool isInitialized = false;
         private refaccion detailsForm;
-
-
+        private bool suppressComboBoxEvent = false; // Variable para suprimir eventos innecesarios
 
         public main()
         {
@@ -35,6 +36,9 @@ namespace controlAlmacen.Properties
 
             // Deshabilitar el botón de maximizar
             this.MaximizeBox = false;
+
+            // Conectar el evento de actualización de texto para el filtrado incremental
+            comboBoxRefactions.TextUpdate += comboBoxRefactions_TextUpdate;
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -44,6 +48,8 @@ namespace controlAlmacen.Properties
         private async void main_Load(object sender, EventArgs e)
         {
             await LoadRefactionsAsync();
+            SetUserLabel();
+
         }
 
         private async Task LoadRefactionsAsync()
@@ -55,19 +61,14 @@ namespace controlAlmacen.Properties
             comboBoxRefactions.ValueMember = "Id";
             comboBoxRefactions.SelectedIndex = -1;
             isInitialized = true;
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
         }
 
         private async Task<List<Refaction>> GetAllRefactionsAsync()
         {
             using (HttpClient client = new HttpClient())
             {
-                var refactionUrl = "https://quintaesencia.website/api/v1/refactions/all-minus";
-                var locationUrl = "https://quintaesencia.website/api/v1/refactions/all-locations";
+                var refactionUrl = "http://127.0.0.1:8000/api/v1/refactions/all-minus";
+                var locationUrl = "http://127.0.0.1:8000/api/v1/refactions/all-locations";
 
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Session.Accesstoken);
 
@@ -106,6 +107,21 @@ namespace controlAlmacen.Properties
             }
         }
 
+
+
+        private void SetUserLabel()
+        {
+            if (!string.IsNullOrEmpty(Session.UserName))
+            {
+                // Asigna el nombre de usuario al Label
+                labelUser.Text = $"Bienvenido {Session.UserName} 👤​";
+            }
+            else
+            {
+                labelUser.Text = "Usuario no identificado";
+            }
+        }
+
         private void label1_Click(object sender, EventArgs e)
         {
         }
@@ -114,7 +130,7 @@ namespace controlAlmacen.Properties
         {
             using (var client = new HttpClient())
             {
-                var url = "https://quintaesencia.website/api/v1/users/log-out";
+                var url = "http://127.0.0.1:8000/api/v1/users/log-out";
 
                 client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Session.Accesstoken);
 
@@ -122,6 +138,9 @@ namespace controlAlmacen.Properties
 
                 if (response.IsSuccessStatusCode)
                 {
+                   
+                    Session.ClearSession();
+
                     var responseData = await response.Content.ReadAsStringAsync();
                     MessageBox.Show("Deslogueo exitoso.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     login loginForm = new login();
@@ -134,6 +153,7 @@ namespace controlAlmacen.Properties
                 }
             }
         }
+
 
         private void textBox1_Enter(object sender, EventArgs e)
         {
@@ -159,9 +179,10 @@ namespace controlAlmacen.Properties
         {
         }
 
+        // Método para manejar la selección en el ComboBox
         private void comboBoxRefactions_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (!isInitialized) return;
+            if (suppressComboBoxEvent || !isInitialized) return;
 
             if (comboBoxRefactions.SelectedItem is Refaction selectedRefaction)
             {
@@ -178,6 +199,32 @@ namespace controlAlmacen.Properties
                 detailsForm.FormClosed += (s, args) => detailsForm = null; // Limpiar la referencia cuando se cierre
                 detailsForm.ShowDialog(); // Mostrar el formulario de manera modal
             }
+        }
+
+        // Método para manejar el filtrado incremental mientras se escribe en el ComboBox
+        private void comboBoxRefactions_TextUpdate(object sender, EventArgs e)
+        {
+            if (!isInitialized) return;
+
+            suppressComboBoxEvent = true;
+
+            string searchText = comboBoxRefactions.Text.ToLower();
+            List<Refaction> filteredList = allRefactions
+                .Where(r => r.Name.ToLower().Contains(searchText))
+                .ToList();
+
+            comboBoxRefactions.DataSource = null; // Limpia el ComboBox
+            comboBoxRefactions.DataSource = filteredList;
+            comboBoxRefactions.DisplayMember = "Name";
+            comboBoxRefactions.ValueMember = "Id";
+
+            // Establecer el texto de nuevo, ya que se borra al cambiar el DataSource
+            comboBoxRefactions.Text = searchText;
+
+            // Mueve el cursor al final del texto
+            comboBoxRefactions.SelectionStart = comboBoxRefactions.Text.Length;
+
+            suppressComboBoxEvent = false;
         }
 
         private void textBoxBuscar_TextChanged(object sender, EventArgs e)
@@ -200,14 +247,84 @@ namespace controlAlmacen.Properties
         {
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private bool auth = true;
+        private async void button1_Click(object sender, EventArgs e)
         {
-            using(capturarHuella capturarFp =  new capturarHuella())
+            using (capturarHuella capturarFp = new capturarHuella())
+
             {
-                capturarFp.OnTemplate += this.OnTemplate;
-                capturarFp.ShowDialog();
+                bool isactivate;
+                isactivate = await CheckIfFingerprintExistsAsync(Session.UserId);
+                Debug.WriteLine(isactivate);
+                if (isactivate == true)
+                {
+                    MessageBox.Show("Huella ya registrada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    capturarFp.OnTemplate += this.OnTemplate;
+                    capturarFp.ShowDialog();
+                }
+
             }
         }
+
+        private async Task<bool> CheckIfFingerprintExistsAsync(int userId)
+        {
+            string base64Fingerprint = string.Empty;
+
+            try
+            {
+                Debug.WriteLine(userId);
+                var data = new Dictionary<string, string> { { "user_id", userId.ToString() } };
+                var content = new FormUrlEncodedContent(data);
+                Debug.WriteLine(content);
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Session.Accesstoken);
+
+                HttpResponseMessage response = await client.PostAsync("http://127.0.0.1:8000/api/v1/fp/check-digital-fp", content);
+                Debug.WriteLine(response.StatusCode);
+                if (response.IsSuccessStatusCode)
+                {
+                    var jsonResponse = await response.Content.ReadAsStringAsync();
+                    Debug.WriteLine(jsonResponse);
+
+                    using (JsonDocument doc = JsonDocument.Parse(jsonResponse))
+                    {
+                        if (doc.RootElement.TryGetProperty("data", out JsonElement dataElement))
+                        {
+                            base64Fingerprint = dataElement.GetString();
+                            Debug.WriteLine(base64Fingerprint);
+                            //button1.Enabled = false;
+                        }
+                        else
+                        {
+                            Debug.WriteLine("No se encontró la propiedad 'data' en la respuesta JSON.");
+                        }
+                    }
+
+                    // Validación: Verificar si la huella dactilar está registrada
+                    if (string.IsNullOrEmpty(base64Fingerprint))
+                    {
+                        // No se encontró huella dactilar registrada
+                        return false;
+                    }
+
+                    // La huella dactilar está registrada
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show("Error al verificar la huella dactilar: " + response.ReasonPhrase, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al conectar con el servidor: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
         private Template Template = null;
 
         private async void OnTemplate(Template template)
@@ -218,7 +335,7 @@ namespace controlAlmacen.Properties
 
                 if (template != null)
                 {
-                    MessageBox.Show("Fingerprint was correct and set to go");
+                    MessageBox.Show("Huella dactilar generada correctamente, Lista para funcionar");
 
                     byte[] fingerprint = Template.Bytes;
 
@@ -244,30 +361,34 @@ namespace controlAlmacen.Properties
                         {
                             // Asegúrate de que la URL esté correcta y accesible
                             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Session.Accesstoken);
-                            HttpResponseMessage response = await client.PostAsync("https://quintaesencia.website/api/v1/fp/save-digital-fp", content);
+                            HttpResponseMessage response = await client.PostAsync("http://127.0.0.1:8000/api/v1/fp/save-digital-fp", content);
 
                             if (response.IsSuccessStatusCode)
                             {
-                                MessageBox.Show("Fingerprint was successfully sent to the server.");
+                                //MessageBox.Show("La huella dactilar se envió con éxito al servidor.");
+                               
                             }
                             else
                             {
-                                MessageBox.Show("Failed to send fingerprint: " + response.ReasonPhrase);
+                                MessageBox.Show("No se pudo enviar la huella dactilar:" + response.ReasonPhrase);
                             }
                         }
                         catch (Exception ex)
                         {
-                            MessageBox.Show("An error occurred: " + ex.Message);
+                            MessageBox.Show("Se ha producido un error: " + ex.Message);
                         }
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Fingerprint was not correctly captured");
+                    MessageBox.Show("La huella dactilar no se capturó correctamente");
                 }
             }));
         }
 
+        private void labelUser_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

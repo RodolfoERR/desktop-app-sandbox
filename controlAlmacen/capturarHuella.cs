@@ -24,7 +24,7 @@ namespace controlAlmacen
         protected override void Init()
         {
             base.Init();
-            base.Text = "Huella digital para cargar";
+            base.Text = "Huella dactilar para cargar";
             Enroller = new DPFP.Processing.Enrollment();
             UpdateStatus();
         }
@@ -34,7 +34,7 @@ namespace controlAlmacen
             // Somehow this one doesn't work here
             //SetStatus(String.Format("Fingerprint samples needed: {0}"), Enroller.FeaturesNeeded);
 
-            SetStatus("Necesitamos más huellas dactilares para crear la plantilla.");
+            SetStatus("Necesitamos más huellas dactilares para crear la plantilla");
         }
 
         protected override void Process(DPFP.Sample Sample)
@@ -47,8 +47,15 @@ namespace controlAlmacen
             // Check quality of the sample and add to enroller if it's good
             if (features != null) try
                 {
-                    MakeReport("Se creó el conjunto de funciones de huellas dactilares1.");
-                    Enroller.AddFeatures(features);     // Add feature set to template.
+                    MakeReport("Se creó el conjunto de características de huellas dactilares.");
+                    try { Enroller.AddFeatures(features); }
+                    catch (Exception e)
+                    {
+
+                            MessageBox.Show("Se ha identificado una huella distinta a las otras, Intentelo de nuevo...");
+                            return;
+                    }
+                            // Add feature set to template.Esta
                 }
                 finally
                 {
@@ -59,7 +66,7 @@ namespace controlAlmacen
                     {
                         case DPFP.Processing.Enrollment.Status.Ready:   // report success and stop capturing
                             OnTemplate(Enroller.Template);
-                            SetPrompt("Haga clic en Cerrar y luego haga clic en Verificación de huellas digitales.");
+                            SetPrompt("Haga clic en Cerrar y, a continuación, haga clic en Verificación de huellas dactilares.");
                             Stop();
                             break;
 
@@ -75,6 +82,11 @@ namespace controlAlmacen
         }
 
         private void capturarHuella_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

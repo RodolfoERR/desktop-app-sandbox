@@ -173,3 +173,15 @@ C:\Users\jhong\OneDrive\Escritorio\desktopAppControlalmacen\controlAlmacen\contr
 C:\Users\jhong\OneDrive\Escritorio\desktopAppControlalmacen\controlAlmacen\controlAlmacen\obj\Debug\net8.0-windows\controlAlmacen.department.resources
 C:\Users\jhong\OneDrive\Escritorio\desktopAppControlalmacen\controlAlmacen\controlAlmacen\obj\Debug\net8.0-windows\controlAlmacen.sourcelink.json
 C:\Users\jhong\OneDrive\Escritorio\desktopAppControlalmacen\controlAlmacen\controlAlmacen\obj\Debug\net8.0-windows\controlAlmacen.compararHuella.resources
+C:\Users\SandovalS\Desktop\desktopApp\controlAlmacen\controlAlmacen\bin\Debug\net8.0-windows\DPFPCtlXTypeLibNET.dll
+C:\Users\SandovalS\Desktop\desktopApp\controlAlmacen\controlAlmacen\bin\Debug\net8.0-windows\DPFPCtlXWrapperNET.dll
+C:\Users\SandovalS\Desktop\desktopApp\controlAlmacen\controlAlmacen\bin\Debug\net8.0-windows\DPFPDevNET.dll
+C:\Users\SandovalS\Desktop\desktopApp\controlAlmacen\controlAlmacen\bin\Debug\net8.0-windows\DPFPEngNET.dll
+C:\Users\SandovalS\Desktop\desktopApp\controlAlmacen\controlAlmacen\bin\Debug\net8.0-windows\DPFPGuiNET.dll
+C:\Users\SandovalS\Desktop\desktopApp\controlAlmacen\controlAlmacen\bin\Debug\net8.0-windows\DPFPShrNET.dll
+C:\Users\SandovalS\Desktop\desktopApp\controlAlmacen\controlAlmacen\bin\Debug\net8.0-windows\DPFPShrXTypeLibNET.dll
+C:\Users\SandovalS\Desktop\desktopApp\controlAlmacen\controlAlmacen\bin\Debug\net8.0-windows\DPFPVerNET.dll
+C:\Users\SandovalS\Desktop\desktopApp\controlAlmacen\controlAlmacen\obj\Debug\net8.0-windows\controlAlmacen.capturarHuella.resources
+C:\Users\SandovalS\Desktop\desktopApp\controlAlmacen\controlAlmacen\obj\Debug\net8.0-windows\controlAlmacen.CaptureForm.resources
+C:\Users\SandovalS\Desktop\desktopApp\controlAlmacen\controlAlmacen\obj\Debug\net8.0-windows\controlAlmacen.compararHuella.resources
+C:\Users\jhong\OneDrive\Escritorio\desktopAppControlalmacen\controlAlmacen\controlAlmacen\obj\Debug\net8.0-windows\controlAlmacen.consultarRefaccion.resources

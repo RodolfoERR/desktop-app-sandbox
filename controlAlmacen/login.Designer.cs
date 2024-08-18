@@ -35,6 +35,9 @@
             bindingSource1 = new BindingSource(components);
             textBox1 = new TextBox();
             panel2 = new Panel();
+            label4 = new Label();
+            label3 = new Label();
+            button1 = new Button();
             botonLogin = new Button();
             label2 = new Label();
             label1 = new Label();
@@ -79,23 +82,57 @@
             // panel2
             // 
             panel2.BackColor = SystemColors.InactiveBorder;
+            panel2.Controls.Add(label4);
+            panel2.Controls.Add(label3);
+            panel2.Controls.Add(button1);
             panel2.Controls.Add(botonLogin);
             panel2.Controls.Add(label2);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(textBox2);
             panel2.Controls.Add(textBox1);
-            panel2.Location = new Point(464, 82);
+            panel2.Location = new Point(464, 70);
             panel2.Name = "panel2";
-            panel2.Size = new Size(279, 274);
+            panel2.Size = new Size(279, 337);
             panel2.TabIndex = 2;
             panel2.Paint += panel2_Paint;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(127, 237);
+            label4.Name = "label4";
+            label4.Size = new Size(14, 15);
+            label4.TabIndex = 8;
+            label4.Text = "ó";
+            label4.Click += label4_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(0, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(0, 15);
+            label3.TabIndex = 7;
+            // 
+            // button1
+            // 
+            button1.BackColor = SystemColors.Highlight;
+            button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = SystemColors.ControlLight;
+            button1.Location = new Point(49, 255);
+            button1.Name = "button1";
+            button1.Size = new Size(179, 46);
+            button1.TabIndex = 6;
+            button1.Text = "Buscar Refaccion o Subministro";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click_1;
             // 
             // botonLogin
             // 
             botonLogin.BackColor = SystemColors.Highlight;
             botonLogin.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             botonLogin.ForeColor = SystemColors.ControlLight;
-            botonLogin.Location = new Point(76, 206);
+            botonLogin.Location = new Point(76, 195);
             botonLogin.Name = "botonLogin";
             botonLogin.Size = new Size(120, 39);
             botonLogin.TabIndex = 5;
@@ -167,5 +204,8 @@
         private Label label1;
         private TextBox textBox2;
         private Button botonLogin;
+        private Label label4;
+        private Label label3;
+        private Button button1;
     }
 }

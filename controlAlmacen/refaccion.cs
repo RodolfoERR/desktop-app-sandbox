@@ -54,6 +54,7 @@ namespace controlAlmacen
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -109,23 +110,39 @@ namespace controlAlmacen
                 }
             }
 
-            // Si llegamos aquí, la verificación fue exitosa
-            var url = $"https://quintaesencia.website/api/v1/refactions/taking/{_refaction.Id}";
+            //Si llegamos aquí, la verificación fue exitosa
+            //var url = $"https://quintaesencia.website/api/v1/refactions/taking/{_refaction.Id}";
+            //client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Session.Accesstoken);
+
+            //var contenido = new StringContent(
+            //    JsonConvert.SerializeObject(new { quantity = cantidadSolicitada }),
+            //    Encoding.UTF8,
+            //    "application/json"
+            //);
+
+            var url = $"http://127.0.0.1:8000/api/v1/reports/create";
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Session.Accesstoken);
 
+            var refacciones = new List<dynamic>
+            {
+                new { refaction_id = _refaction.Id, quantity = cantidadSolicitada }
+            };
+
             var contenido = new StringContent(
-                JsonConvert.SerializeObject(new { quantity = cantidadSolicitada }),
-                Encoding.UTF8,
+                JsonConvert.SerializeObject(new
+                {
+                    arr_refaction = refacciones
+                }),
+            Encoding.UTF8,
                 "application/json"
             );
-
             try
             {
-                var respuesta = await client.PutAsync(url, contenido);
+                var respuesta = await client.PostAsync(url, contenido);
 
                 if (respuesta.IsSuccessStatusCode)
                 {
-                    MessageBox.Show("Operación exitosa", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Refacción o Suministro retirado exitosamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     await ReloadRefactionDetails();
                 }
                 else
@@ -142,7 +159,7 @@ namespace controlAlmacen
 
         private async Task ReloadRefactionDetails()
         {
-            var url = $"https://quintaesencia.website/api/v1/refactions/by/{_refaction.Id}";
+            var url = $"http://127.0.0.1:8000/api/v1/refactions/by/{_refaction.Id}";
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", Session.Accesstoken);
 
             try
